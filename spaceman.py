@@ -12,11 +12,52 @@ def load_word():
 #    words_list = words_list[0].split(' ')
    secret_word = random.choice(['cat','dogy','horse'])
    return secret_word
-    
-def check_userinput(user_input):
+
+def fill_inblanks(secret_word, blanks,Letter):
+
+        for i in range(len(secret_word)):
+                if secret_word[i] == Letter:
+                        blanks[i] = secret_word[i]
+        
+        return blanks
+
+                
+
+        
+
+       
+  
+
+
+
+
+
+
+
+def guessed_correct(Letter, secret_word):
+        return True if Letter in secret_word else False
+
+        
+                
+        
+
+        
+        
+
+
+
+
+
+
+
+def user_input():
     '''checks length of user input'''
-    if len(Letter) > 1 or userinput.isalpha() not True:
-        return False
+    Letter = input("Enter a Letter ")
+    if len(Letter) > 1 or Letter.isalpha() is False:
+        print('Please Enter a letter ')
+        user_input()
+    else:
+      return Letter 
 
 
 
@@ -32,12 +73,17 @@ def space_man():
     print("Hello, Welcome to SpaceMan\nYou have {} lives".format(lives))
     word = load_word()
     blanks = show_blanks(word)
-    print(blanks)
-    check_userinput()
+    print (blanks)
+    Letter = user_input()
 
-    while lives not 0:
 
-        
+
+
+
+
+    while lives is not 0:
+            if guessed_correct(Letter, word): 
+                    fill_inblanks(word,blanks,Letter)
 
 
 
