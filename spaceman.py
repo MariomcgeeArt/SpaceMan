@@ -67,7 +67,7 @@ def get_guessed_word(secret_word, letters_guessed):
 
 def is_guess_in_word(guess, secret_word):
 
-    if guesss in secret_word:
+    if guess in secret_word:
         return True
     else:
         return False 
@@ -83,74 +83,76 @@ def is_guess_in_word(guess, secret_word):
     '''
     #TODO: check if the letter guess is in the secret word
 
-    pass
+    #pass
 
 
 
 
 def spaceman(secret_word):
 
-
-    letter_guessed =[]
+    #TODO: show the player information about the game according to the project spec
+    
+    letters_guessed =[]
     lives = 7
     alphabet = ["abcdefghijklmnopqrstuvwxyz"]
 
 
-    print("Hi, Welcome to SPACEMAN!\nGuess the secret word correctly")
+    print("Hi, Welcome to SPACEMAN!, Guess the word correctly")
     print(f"The secret word holds: {len(secret_word)} letters")
-    print(f"You have 7 lives,  GOOD LUCK!")
-    print = input("Enter a Letter: ")
-
-
-
-
-
-    if len(guess) != 1:
-        print("PLease enter a letter ")
-    elif guess.isalpha() == False:
-        print("please enter a letter ")
-    else:
-        is_guess_in_word(guess, secret_word)
-
-
-
-    # get_guessed_word()
-
-    #     if guess == 0:
-    #         print("YOU LOST!!!!!!!!!")
-
-
-
-
-
-
-
-
-
-    '''
-    A function that controls the game of spaceman. Will start spaceman in the command line.
-    Args:
-      secretword (string): the secret word to guess.
-    '''
-
-
-    #TODO: show the player information about the game according to the project spec
-
+    print ("You have 7 lives,  GOOD LUCK!")
+    print (input("Enterrrrr a Letter: "))
     #TODO: Ask the player to guess one letter per round and check that it is only one letter
-
-
-
+   # while True:
+    while 
+        guess = input('Enteryyy a letter: ').lower()
+        if len(guess) != 1:
+            print("PLease enter a letter ")
+        elif guess.isalpha() == False:
+            print("Please enter a letter ")
+        else:
+            is_guess_in_word(guess, secret_word)
+            
     #TODO: Check if the guessed letter is in the secret or not and give the player feedback
-
     #TODO: show the guessed word so far
+    get_guessed_word(secret_word,letters_guessed)
 
     #TODO: check if the game has been won or lost
+    incorrect = set(letters_guessed).difference(secret_word) 
+    
 
 
-
-
+    if is_word_guessed(secret_word, letters_guessed) == True:
+        print('YOU JUST WON THE GAME')
+    elif len(incorrect) > 6:
+        print('YOU JUST LOST THE GAME \nThe word was: ' + secret_word)
+        return False
+    else:
+        print('Incorrect Guesses: ' + str(len(incorrect)))
 
 
 #These function calls that will start the game
 secret_word = load_word()
 spaceman(secret_word)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
