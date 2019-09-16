@@ -104,7 +104,7 @@ def spaceman(secret_word):
     print("Hi, Welcome to SPACEMAN!, Guess the word correctly")
     print(f"The secret word holds: {len(secret_word)} letters")
     print ("You have 7 lives,  GOOD LUCK!")
-    print(secret_word)
+    # print(secret_word)
     # print (input("Enterrrrr a Letter: "))
     print(get_guessed_word(secret_word,letters_guessed))
     #TODO: Ask the player to guess one letter per round and check that it is only one letter
