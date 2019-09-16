@@ -122,10 +122,12 @@ def spaceman(secret_word):
                 this = True
                 letters_guessed.append(guess)
 
-        if is_guess_in_word(guess, secret_word)==True:
-            print("Your guess appears in the word")
-        else:
-            lives-=1
+                if is_guess_in_word(guess, secret_word)==True:
+                    print("Your guess appears in the word")
+                    if is_word_guessed(secret_word, letters_guessed):
+                        print('YOU JUST WON THE GAME')
+                else:
+                    lives-=1
             
     #TODO: Check if the guessed letter is in the secret or not and give the player feedback
     #TODO: show the guessed word so far
@@ -139,6 +141,7 @@ def spaceman(secret_word):
 
         if is_word_guessed(secret_word, letters_guessed):
             print('YOU JUST WON THE GAME')
+            return True 
         #elif len(incorrect) > 6:
         elif lives == 0:
             print('YOU JUST LOST THE GAME \nThe word was: ' + secret_word)
