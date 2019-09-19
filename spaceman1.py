@@ -155,3 +155,10 @@ if __name__ == '__main__':
     secret_word = load_word()
     spaceman(secret_word)
 
+
+
+
+
+
+
+
